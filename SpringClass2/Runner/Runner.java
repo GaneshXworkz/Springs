@@ -24,7 +24,7 @@ public class Runner {
 		System.out.println(rocketref.getName());
 		System.out.println(rocketref.getBudget());
 		
-		Rocket rocketref1 = spring.getBean("Rocket1", Rocket.class);
+		Rocket rocketref1 = spring.getBean("jetRocket", Rocket.class);
 		System.out.println(rocketref1);
 		
 		rocketref1.setName("ARAB");
