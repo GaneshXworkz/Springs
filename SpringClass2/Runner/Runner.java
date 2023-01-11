@@ -24,10 +24,11 @@ public class Runner {
 		System.out.println(rocketref.getName());
 		System.out.println(rocketref.getBudget());
 		
-		Rocket rocketref1 = spring.getBean("jetRocket", Rocket.class);
+		Rocket rocketref1 = spring.getBean("Rocket1", Rocket.class);
 		System.out.println(rocketref1);
-		rocketref1.setName("Scout");
-		rocketref1.setCountry("USA");
+		
+		rocketref1.setName("ARAB");
+		rocketref1.setCountry("UAE");
 		rocketref1.sevoidtBudget(748);
 		System.out.println(rocketref1.getCountry());
 		System.out.println(rocketref1.getName());
@@ -43,7 +44,7 @@ public class Runner {
 		System.out.println(actor.getAge());
 		
 		
-		Actor actor1=spring.getBean("Puneet",Actor.class);
+		Actor actor1=spring.getBean("DHARSHAN",Actor.class);
 		System.out.println(actor1);
 		System.out.println(actor1.getName());
 		System.out.println(actor1.getLanguage());

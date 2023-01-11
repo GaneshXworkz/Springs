@@ -14,7 +14,7 @@ public class Actor {
 		super();
 	}
 	
-	public Actor(@Value("Sudeep") String name, @Value("Kannada") String language, @Value("49") int age) {
+	public Actor(@Value("Dharshan") String name, @Value("Kannada") String language, @Value("50") int age) {
 		super();
 		this.name = name;
 		this.language = language;
