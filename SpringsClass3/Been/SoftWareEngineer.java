@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class SoftWareEngineer {
+	
 	@Autowired
 	@Qualifier("SoftWareEngineerName")
 	private String name;
@@ -20,9 +21,9 @@ public class SoftWareEngineer {
 	private String data;
 	@Autowired
 	@Qualifier("SoftWareEngineerFree")
-	
+
 	private boolean free;
-	
+
 	public SoftWareEngineer() {
 		System.out.println("====Software Constructor is Created===");
 	}
@@ -36,12 +37,10 @@ public class SoftWareEngineer {
 		this.free = free;
 	}
 
-	
-
 	@Override
 	public String toString() {
 		return "SoftWareEngineer [name=" + name + ", salaray=" + salaray + ", developer=" + developer + ", data=" + data
 				+ ", free=" + free + "]";
 	}
-	
+
 }
