@@ -9,24 +9,18 @@ import org.springframework.stereotype.Component;
 @Component
 public class Ghost {
 
-	@Autowired
-	@Qualifier("gostName")
-	private String name;
+		private String name;
 	
-	@Autowired
-	@Qualifier("gostGender")
+	
 	private String gender;
 	
-	@Autowired
-	@Qualifier("gostDeathDate")
+	
 	private LocalDate dethDate;
 	
-	@Autowired
-	@Qualifier("gostDeathTime")
+	
 	private LocalTime dethtime;
 	
-	@Autowired
-	@Qualifier("gostDeathReason")
+	
 	private String reason;
 	
 	@Autowired
@@ -52,21 +46,17 @@ public class Ghost {
 	
 	
 
-
+	@Autowired
 	public Ghost(@Qualifier("gostName")
-     String name,@Qualifier("gostGender") String gender, @Qualifier("gostDeathDate")LocalDate dethDate,@Qualifier("gostDeathTime") LocalTime dethtime, @Qualifier("gostDeathReason")String reason, int nailsLength,
-			String colour, String dethPlace, String creamationPlace, int age) {
+     String name,@Qualifier("gostGender") String gender, @Qualifier("gostDeathDate")LocalDate dethDate,@Qualifier("gostDeathTime") LocalTime dethtime, 
+     @Qualifier("gostDeathReason")String reason) {
 		super();
 		this.name = name;
 		this.gender = gender;
 		this.dethDate = dethDate;
 		this.dethtime = dethtime;
 		this.reason = reason;
-		this.nailsLength = nailsLength;
-		this.colour = colour;
-		this.dethPlace = dethPlace;
-		this.creamationPlace = creamationPlace;
-		this.age = age;
+		
 	}
 
 
@@ -79,5 +69,91 @@ public class Ghost {
 				+ ", reason=" + reason + ", nailsLength=" + nailsLength + ", colour=" + colour + ", dethPlace="
 				+ dethPlace + ", creamationPlace=" + creamationPlace + ", age=" + age + "]";
 	}
+
+
+
+
+
+	public String getName() {
+		return name;
+	}
+
+
+
+
+
+	public String getGender() {
+		return gender;
+	}
+
+
+
+
+
+	public LocalDate getDethDate() {
+		return dethDate;
+	}
+
+
+
+
+
+	public LocalTime getDethtime() {
+		return dethtime;
+	}
+
+
+
+
+
+	public String getReason() {
+		return reason;
+	}
+
+
+
+
+
+	public int getNailsLength() {
+		return nailsLength;
+	}
+
+
+
+
+
+	public String getColour() {
+		return colour;
+	}
+
+
+
+
+
+	public String getDethPlace() {
+		return dethPlace;
+	}
+
+
+
+
+
+	public String getCreamationPlace() {
+		return creamationPlace;
+	}
+
+
+
+
+
+	public int getAge() {
+		return age;
+	}
+
+
+
+
+
+	
 	
 }

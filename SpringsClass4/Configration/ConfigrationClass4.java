@@ -55,7 +55,7 @@ public class ConfigrationClass4 {
 	//*************************************************************************
 	
 	@Bean
-	public String enginName() {
+	public String engineName() {
 		System.out.println("Registering enginName ....");		
 		return "UXE";
 	}

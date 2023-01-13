@@ -7,47 +7,53 @@ import org.springframework.stereotype.Component;
 @Component
 public class Snake {
 
-	@Autowired
-	@Qualifier("SneakName")
 	private String name;
-	
+
 	@Autowired
 	@Qualifier("SneakLength")
 	private int length;
-	
+
 	@Autowired
 	@Qualifier("SneakColour")
 	private String colour;
-	@Autowired
-	@Qualifier("SneakType")
+
 	private String type;
-	
-	@Autowired
-	@Qualifier("SneakPoisonies")
 	private boolean poisionous;
-	
-	
-	
-	
 
-
-	public Snake(@Qualifier("SneakName")String name, int length, String colour, @Qualifier("SneakType")String type,@Qualifier("SneakPoisonies") boolean poisionous) {
+	@Autowired
+	public Snake(@Qualifier("SneakName") String name, @Qualifier("SneakType") String type,
+			@Qualifier("SneakPoisonies") boolean poisionous) {
 		super();
 		this.name = name;
-		this.length = length;
-		this.colour = colour;
+
 		this.type = type;
 		this.poisionous = poisionous;
 	}
-
-
-
-
-
 
 	@Override
 	public String toString() {
 		return "Snake [name=" + name + ", length=" + length + ", colour=" + colour + ", type=" + type + ", poisionous="
 				+ poisionous + "]";
 	}
+
+	public String getName() {
+		return name;
+	}
+
+	public int getLength() {
+		return length;
+	}
+
+	public String getColour() {
+		return colour;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public boolean isPoisionous() {
+		return poisionous;
+	}
+
 }

@@ -10,37 +10,52 @@ public class NewsPaper {
 	@Autowired
 	@Qualifier("newsPaperId")
 	private String id;
-	
-	@Autowired
-	@Qualifier("newsPaperName")
+
 	private String name;
-	
-	@Autowired
-	@Qualifier("newsPaperOwner")
+
 	private String ownerName;
-	
+
 	@Autowired
 	@Qualifier("newsPaperLanguage")
 	private String langauge;
-	
-	@Autowired
-	@Qualifier("newsPaperPrize")
-	private int prize;
-	
-	
-	
-	
 
-	public NewsPaper(String id,@Qualifier("newsPaperName") String name, @Qualifier("newsPaperOwner")
-String ownerName, String langauge, int prize) {
+	private int prize;
+
+	@Autowired
+	public NewsPaper(@Qualifier("newsPaperName") String name, @Qualifier("newsPaperOwner") String ownerName) {
 		super();
-		this.id = id;
+
 		this.name = name;
 		this.ownerName = ownerName;
-		this.langauge = langauge;
-		this.prize = prize;
+
+		
 	}
 
+	public String getId() {
+		return id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public String getOwnerName() {
+		return ownerName;
+	}
+
+	public String getLangauge() {
+		return langauge;
+	}
+
+	public int getPrize() {
+		return prize;
+	}
+
+	@Autowired
+	@Qualifier("newsPaperPrize")
+	public void setPrize(int prize) {
+		this.prize = prize;
+	}
 
 	@Override
 	public String toString() {
@@ -48,7 +63,4 @@ String ownerName, String langauge, int prize) {
 				+ ", prize=" + prize + "]";
 	}
 
-
-	
-	
 }
