@@ -8,7 +8,7 @@ import com.xworkz.Maven.SpringClass2.Things.Actor;
 import com.xworkz.Maven.SpringClass2.Things.Rocket;
 
 @Configuration
-@ComponentScan("com.xworkz.Maven")
+@ComponentScan("com.xworkz.Maven.SpringClass2")
 public class Configration {
 
 	
