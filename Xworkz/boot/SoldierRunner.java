@@ -13,7 +13,7 @@ public class SoldierRunner {
 		
 		soldierServiceImp service=new soldierServiceImp();
 		SoldierRepo repo=new SoldierRepoImpl();
-		service.setSoldierRepo(repo);
+		repo.save(dto);
 		service.ValidateAndSave(dto);
 		
 	}
