@@ -13,6 +13,8 @@ import com.Xworkz.dto.SoldierDTO;
 
 public class soldierServiceImp implements SoldierService{
 
+	
+	
 	@Override
 	public boolean ValidateAndSave(SoldierDTO dto) { 
 		

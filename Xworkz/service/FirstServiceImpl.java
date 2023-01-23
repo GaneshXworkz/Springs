@@ -8,6 +8,7 @@ import javax.validation.Validator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.Xworkz.Eception.ArraySizeException;
 import com.Xworkz.dto.FirstAidDTO;
 import com.Xworkz.repository.FirstAidRepo;
 
@@ -27,9 +28,9 @@ public class FirstServiceImpl implements  FirstAidService{
 	
 	
 	@Override
-	public boolean validateAndSave(FirstAidDTO dto)
+	public boolean validateAndSave(FirstAidDTO dto) throws ArraySizeException
 	{
-		System.out.println("Running validation and Save");
+		System.out.println("Running validation and Save--->1");
 		
 		System.out.println("dto"+dto);
 		
@@ -43,7 +44,8 @@ public class FirstServiceImpl implements  FirstAidService{
 		
 		return false;
 		
-	}else
+	}
+	else
 	{
 		System.out.println("Data is valid can  save");
 		
@@ -56,5 +58,11 @@ public class FirstServiceImpl implements  FirstAidService{
 	
 	
 	}
+	
+	
+	
+
+	
+	
 
 }
