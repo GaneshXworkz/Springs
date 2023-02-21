@@ -12,7 +12,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 public class SpringConfigrtaion {
 
 	public SpringConfigrtaion() {
-		System.out.println("Configration created :"+this.getClass().getSimpleName());
+		System.out.println("Configration created....1 :"+this.getClass().getSimpleName());
 	}
 	
 	@Bean

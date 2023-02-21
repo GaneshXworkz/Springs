@@ -1,8 +1,5 @@
 package com.xworkz.valintain.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
@@ -35,7 +32,4 @@ public class valintineDTO {
 	
 	@NotBlank(message="gift should be slected")
 	private String gifts;
-	
-	
-	
 }

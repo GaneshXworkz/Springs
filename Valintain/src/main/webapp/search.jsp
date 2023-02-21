@@ -5,11 +5,10 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-dark">
@@ -24,14 +23,31 @@
 				aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-			<a href="valintine">Valentine</a>
-			
+			<a href="index.jsp">home Page</a>
+
 		</div>
 
 
 	</nav>
+	<form action="searchbyId" method="get" class="container col-12 col-sm-6 col-md-3 shadow-lg p-4 mb-4 bg-white mx-auto d-block border border-primary rounded-lg 
+m-5 pb-5 bg-info">
+<per>
+Serach By Id <input type="search" name="id">
+<input type="submit" value="search">
+</per>
+</form>
 
-	<h1>Welcome to valentine</h1>
+
+
+<h1>Result of searching</h1><br>
+<h3>Name :${dto.name}</h3><br>
+<h3>Valintine Name:${dto.valentineName}</h3><br>
+<h3>PLACE :${dto.places}</h3><br>
+<h3>GIFT :${dto.gifts}</h3><br>
+
+
+
+
 
 
 </body>

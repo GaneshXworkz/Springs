@@ -17,7 +17,7 @@ public class ValintineRepoImpl implements ValintineRepo{
 	
 	
 	public ValintineRepoImpl() {
-		System.out.println("created :"+this.getClass().getSimpleName());
+		System.out.println("created....4 :"+this.getClass().getSimpleName());
 	}
 
 
@@ -41,7 +41,16 @@ public class ValintineRepoImpl implements ValintineRepo{
 	}
 	
 	
-	
+    @Override
+	public ValintineEntityDto findById(int id) {
+		System.out.println("find by ID in Repo .."+id);
+		
+		EntityManager entityManager=this.entityManagerFactory.createEntityManager();
+		ValintineEntityDto froDto=entityManager.find(ValintineEntityDto.class,id);
+		entityManager.close();
+		return froDto;
+		
+	}
 	
 	
 }

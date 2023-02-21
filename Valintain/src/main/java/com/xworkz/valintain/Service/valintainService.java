@@ -4,15 +4,20 @@ import java.util.Set;
 
 import javax.validation.ConstraintViolation;
 
-import org.springframework.stereotype.Service;
-
 import com.xworkz.valintain.dto.valintineDTO;
 
 
 public interface valintainService {
 
-	Set<ConstraintViolation<valintineDTO>> validateAndSave(valintineDTO dto);
+	public Set<ConstraintViolation<valintineDTO>> validateAndSave(valintineDTO dto);
 	
+	default valintineDTO findById(int id) {
+		return null;
+	}
+		
+		
 	
+		
+		
 	}
 

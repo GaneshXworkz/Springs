@@ -18,10 +18,11 @@ import com.xworkz.valintain.dto.Entity.ValintineEntityDto;
 public class valintaineServiceImpl implements valintainService {
 	
 	@Autowired
-	ValintineRepo valintineRepo;
+	public	ValintineRepo valintineRepo;
 	
 	public valintaineServiceImpl() {
-		System.out.println("craeted " + this.getClass().getSimpleName());
+		
+		System.out.println("craeted...5 " + this.getClass().getSimpleName());
 	}
 
 	@Override
@@ -47,7 +48,6 @@ public class valintaineServiceImpl implements valintainService {
 			System.out.println("Vaiolation does not excist , Data is Successs...");
 			
 			ValintineEntityDto valintineEntityDto =new ValintineEntityDto();
-			
 			valintineEntityDto.setName(dto.getName());;
 			valintineEntityDto.setValentineName(dto.getValentineName());;
 			valintineEntityDto.setGifts(dto.getGifts());;
@@ -60,5 +60,28 @@ public class valintaineServiceImpl implements valintainService {
 		}
 
 	}
+	
+	
+	
+	@Override
+	public valintineDTO findById(int id) {
+		if(id>0) {
+			ValintineEntityDto valintineEntityDto=this.valintineRepo.findById(id);
+			if(valintineEntityDto!=null) {
+				System.out.println("entity is found in service for id"+id);
+			   valintineDTO vDto=new valintineDTO();
+			   vDto.setGifts(valintineEntityDto.getGifts());
+			   vDto.setName(valintineEntityDto.getName());
+			   vDto.setPlaces(valintineEntityDto.getPlaces());
+			   vDto.setValentineName(valintineEntityDto.getValentineName());
+			   vDto.setId(valintineEntityDto.getId());
+			   return vDto;
+			}
+		}
+		
+		return valintainService.super.findById(id);
+	}
+
+	
 
 }

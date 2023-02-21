@@ -32,6 +32,7 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<a href="index.jsp">home</a>
+			<a href="search.jsp">search</a>
 
 		</div>
 
@@ -68,7 +69,7 @@ m-5 pb-5 bg-info">
            <tr><td>  Gift</td><td><select name="gifts">
            <option value="">SELECT</option>
            <c:forEach items="${gifts}" var="g">
-           <option value="${g}">${g}</option>
+          <option value="${g}">${g}</option>
            </c:forEach>
            </select></td></tr>
             
