@@ -28,6 +28,7 @@ public class CmserviceImpl implements CmService {
 		{
 			
 			System.err.println("constrainvoilation exites,return constrainViolation");
+			constrainviolation.forEach((cv)->System.err.println(cv.getMessage()));
 			return constrainviolation;
 		} 
 		else

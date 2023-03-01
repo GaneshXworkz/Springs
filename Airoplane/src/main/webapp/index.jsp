@@ -23,7 +23,7 @@
 				aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-			<a href="airAction">Airoplane Resgistration</a>
+			<a href="airAction">Resgistration</a>
 
 		</div>
 

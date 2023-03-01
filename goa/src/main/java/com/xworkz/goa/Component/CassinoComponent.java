@@ -18,7 +18,7 @@ public class CassinoComponent {
 	@PostMapping
 	public String toSend(CassinoDTO dto ,Model model) {
 		System.out.println("Creating To send");
-	System.out.println(dto);
+	     System.out.println(dto);
 		model.addAttribute("name", dto.getName());
 		model.addAttribute("prize",dto.getPrize());
 		return "cassinoSucess.jsp";

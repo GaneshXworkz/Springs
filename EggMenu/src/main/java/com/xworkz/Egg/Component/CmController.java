@@ -31,7 +31,7 @@ public class CmController {
 	Set<ConstraintViolation<CmDto>> contraintviolation=	this.cmservice.validteAndSave(cmdto);
 	if(!contraintviolation.isEmpty()) {
 		System.out.println("validation failed ,display erroe message");
-		contraintviolation.forEach((cv)->System.err.println(cv.getMessage()));
+		
 	}else {
 		System.out.println("validation success ,display sucess message");
 	}

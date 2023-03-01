@@ -23,7 +23,7 @@
 				aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-			<a href="index.jsp">home Page</a>
+			<a href="index.jsp">home</a>
 
 		</div>
 
@@ -31,7 +31,7 @@
 
 	</nav>
 	
-	<h1>Saved Data Successfully.....</h1>
+	<h1>Saved Successfully</h1>
 
 </body>
 </html>

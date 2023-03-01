@@ -34,7 +34,7 @@ m-5 pb-5 bg-info">
 
 
 <tr><td>PARTY</td><td><select name="party">
-        <option>--select party----</option>
+        <option value=" ">--select party----</option>
         <option>BJP</option>
         <option>JDS</option>
         <option>APP</option>
@@ -44,7 +44,7 @@ m-5 pb-5 bg-info">
     
     
 <tr><td>STATE</td><td><select name="state" >
-        <option value="0" >--select state----</option>
+        <option value=" " >--select state----</option>
         <option>KARNATAKA</option>
         <option>ANDRHA</option>
         <option>TELAGNA</option>
@@ -52,7 +52,7 @@ m-5 pb-5 bg-info">
     </select></td></tr>
 
 <tr><td>TENUER</td><td><select name="tenuer">
-        <option>--select tenuer----</option>
+        <option value=" ">--select tenuer----</option>
         <option>1</option>
         <option>3</option>
         <option>4</option>

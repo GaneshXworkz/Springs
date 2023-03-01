@@ -23,7 +23,7 @@
 				aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-			<a href="index.jsp">home Page</a>
+			<a href="index.jsp">home</a>
 
 		</div>
 
