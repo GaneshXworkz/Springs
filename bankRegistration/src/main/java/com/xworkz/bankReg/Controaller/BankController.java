@@ -99,7 +99,7 @@ public class BankController {
 
 	}
 
-	@GetMapping("/update")
+	@GetMapping("/updated")
 	public String onUpdate(@RequestParam int id, Model model) {
 		BankDto dto = this.bankService.findById(id);
 		System.out.println("running on update" + id);
@@ -107,10 +107,10 @@ public class BankController {
 		model.addAttribute("palce", palce);
 		model.addAttribute("gender", gender);
 
-		return "findSerchByName";
+		return "update";
 	}
 
-	@PostMapping("/update")
+	@PostMapping("/updated")
 	public String onUpdate(BankDto dto, Model model) {
 		System.out.println("running on update" + dto);
 		Set<ConstraintViolation<BankDto>> constraintViolations = this.bankService.validateAndUpdate(dto);
@@ -120,9 +120,12 @@ public class BankController {
 
 		} else {
 			model.addAttribute("message", "bank Update success..");
+			System.out.println("update sucessfully");
 		}
-		return "findSerchByName";
+		return "update";
 	}
+	
+	
 	
 	@GetMapping("/delete")
 	public String delete(@RequestParam int id,Model model) {

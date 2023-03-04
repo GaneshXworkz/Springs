@@ -38,8 +38,8 @@
 
 
 	<span style="color: red">${message}</span>
-<span style="color: green">${messages
-}</span>
+	<span style="color: red">${messages}</span>
+
 	<form action="serchByName" method="get"
 		class="container col-12 col-sm-6 col-md-3 shadow-lg p-4 mb-4 bg-white mx-auto d-block border border-primary rounded-lg 
 m-5 pb-5 bg-info">
@@ -80,7 +80,7 @@ m-5 pb-5 bg-info">
 					<td>${l.gender}</td>
 					<td>${l.address}</td>
 					<td>${l.panNo}</td>
-					<td><a href="update?id=${l.id}">Edit</a></td>
+					<td><a href="updated?id=${l.id}">Edit</a></td>
 					<td><a href="delete?id=${l.id}">Delete</a></td>
 				</tr>
 
