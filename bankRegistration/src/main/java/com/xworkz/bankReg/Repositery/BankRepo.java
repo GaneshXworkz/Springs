@@ -13,8 +13,17 @@ public interface BankRepo {
 	default EntityDto findById(int id) { 
 		return null; 
 		}
+	
 	  default List<EntityDto> findByName(String name) {
 		 return Collections.emptyList();
 	 }
+	  
+	public  boolean update(EntityDto entity);
+	
+     default boolean onDelete(int id) {
+		
+		return false;
+		
+	}
 	
 }

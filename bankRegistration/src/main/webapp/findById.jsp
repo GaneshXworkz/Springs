@@ -35,17 +35,17 @@ m-5 pb-5 bg-info">
 	
 <per>
 <div>
- Serach By Id <input type="search" name="id"><input type="submit" value="search">
+ Serach By Id <input type="search" name="id"><input type="submit" value="search" class="btn btn-primary">
  
 </div>
 
 
-       
-        <c:forEach items="${message}" var="a">
-		<span style="color:red">${a.message}</span><br>
-		</c:forEach>
 
-<h1>Result of searching</h1><br>
+		<div>
+			<span style="color: red">${message}</span>
+		</div>
+
+		<h1>Result of searching</h1><br>
 <h3>NAME :${bankto.name}</h3><br>
 <h3>CONTECT NO :${bankto.contectNo}</h3><br>
 <h3>PLACE :${bankto.palce}</h3><br>

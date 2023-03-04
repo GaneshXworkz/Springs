@@ -78,6 +78,7 @@ public class ValentineController {
 			model.addAttribute("message","do not found");
 		}
 		return "search";
+		
 	}
 	
 

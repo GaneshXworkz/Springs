@@ -27,8 +27,7 @@
 			</button>
 			<div class="d-flex flex-row-reverse">
 			<a href="index.jsp" class="p-2">HOME</a>
-			<a href="findById.jsp" class="p-2">FIND BY ID</a>
-			<a href="findSerchByName.jsp" class="p-2">FIND DETAILES BY NAME</a>			
+			
 			</div>			
 		</div>
 	</nav>
@@ -73,7 +72,7 @@ m-5 pb-5 bg-info">
 	 <tr><td>PAN NO :</td><td><input type="text" name="panNo"></td></tr>
 	 <br>
 	
-	  <tr><td><input type="submit" value="save"/></td></tr>
+	  <tr><td><input type="submit" value="save" class="btn btn-primary"/></td></tr>
           
 	
 	</table>

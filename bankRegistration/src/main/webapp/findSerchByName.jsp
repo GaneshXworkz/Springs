@@ -36,40 +36,52 @@
 
 
 
-        <c:forEach items="${NameError}" var="a">
-		<span style="color:red">${a.NameError}</span><br>
-		</c:forEach>
 
-
+	<span style="color: red">${message}</span>
+<span style="color: green">${messages
+}</span>
 	<form action="serchByName" method="get"
 		class="container col-12 col-sm-6 col-md-3 shadow-lg p-4 mb-4 bg-white mx-auto d-block border border-primary rounded-lg 
 m-5 pb-5 bg-info">
-		Serach By Name<input type="search" name="name"><input
-			type="submit" value="search">
 
+		<div>
+			Serach By Name<input type="search" name="name"><input
+				type="submit" value="search" class="btn btn-primary">
+
+
+
+		</div>
 	</form>
 
+
+
 	<div>
-		<table class="table">
+		<table border="1" class="table">
 
 			<tr>
+				<th scope="col">ID</th>
 				<th scope="col">name</th>
 				<th scope="col">contectNo</th>
 				<th scope="col">Palce</th>
 				<th scope="col">gender</th>
 				<th scope="col">address</th>
 				<th scope="col">panNo</th>
+				<th scope="col">update</th>
+				<th scope="col">Delete</th>
 			</tr>
 
 			<c:forEach items="${list}" var="l">
 
 				<tr>
+					<td>${l.id}</td>
 					<td>${l.name}</td>
 					<td>${l.contectNo}</td>
 					<td>${l.palce}</td>
 					<td>${l.gender}</td>
 					<td>${l.address}</td>
 					<td>${l.panNo}</td>
+					<td><a href="update?id=${l.id}">Edit</a></td>
+					<td><a href="delete?id=${l.id}">Delete</a></td>
 				</tr>
 
 			</c:forEach>

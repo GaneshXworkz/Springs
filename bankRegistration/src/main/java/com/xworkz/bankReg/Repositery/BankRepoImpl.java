@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
+import javax.transaction.Transaction;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -38,7 +39,7 @@ public class BankRepoImpl implements BankRepo{
 		
 		entityManager.close();
 		
-		return false;
+		return true;
 	}
 	
 	@Override
@@ -56,8 +57,10 @@ public class BankRepoImpl implements BankRepo{
 
 
 	@Override
-	public List<EntityDto> findByName(String name) {
+	public List<EntityDto> findByName(String name)
+	{
 		System.out.println("Running entity method:"+name);
+		
 	EntityManager entityManager	=this.entityManagerFactory.createEntityManager();
 	try {
 		
@@ -66,9 +69,12 @@ public class BankRepoImpl implements BankRepo{
        System.out.println("Quary :"+name);
        List<EntityDto> list =query.getResultList();
        System.out.println("Total list Found in repo :"+list.size());
-        
+		/* throw new IdNotFoundException; */
 		return list;
-		}
+       
+	} /*
+		 * catch (IdNotFoundException e) { System.out.println("ID NOT FOUND"); }
+		 */
 	finally {
 		entityManager.close();
 		System.out.println("Release the connection....");
@@ -76,6 +82,49 @@ public class BankRepoImpl implements BankRepo{
 	
 	
 	}
+    
+    
+	@Override
+	public boolean update(EntityDto entity) {
+	
+	EntityManager manager=this.entityManagerFactory.createEntityManager();
+	
+	try {
+		EntityTransaction transaction=manager.getTransaction();
+		transaction.begin();
+		manager.merge(entity);
+		transaction.commit();
+		
+		
+		return true;	
+	}finally {
+		manager.close();
+	}
+	 	
+		
+	}
+
+
+	@Override
+	public boolean onDelete(int id) {
+		 System.out.println("Delete method is running....");
+	EntityManager manager= this.entityManagerFactory.createEntityManager();
+	
+	EntityTransaction entityTransaction=manager.getTransaction();
+	EntityDto entityDto=new EntityDto();
+	if(entityDto!=null) {
+		entityTransaction.begin();
+		manager.remove(entityDto);
+		entityTransaction.commit();
+		manager.close();
+	}
+	
+	
+	
+	
+		return true;
+	}
+	
 	
 
 }

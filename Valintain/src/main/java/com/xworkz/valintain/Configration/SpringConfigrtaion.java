@@ -27,4 +27,5 @@ public class SpringConfigrtaion {
 		LocalContainerEntityManagerFactoryBean bean=new LocalContainerEntityManagerFactoryBean();
 		return bean;
 	}
+	
 }

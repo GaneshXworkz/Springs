@@ -11,6 +11,13 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
+<style>
+    body {
+	 background-image: url("hand-painted-watercolor-abstract-watercolor-background_23-2149005675.webp"); 
+}
+
+</style>
+
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-dark">
@@ -25,11 +32,17 @@
 				aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-			<a href="bankAction">BANK REGISTRATION</a>			
+			<div class="d-flex flex-row-reverse">
+			<a href="bankAction" class="p-2">BANK REGISTRATION</a>
+			<a href="findById.jsp" class="p-2">FIND BY ID</a>
+			<a href="findSerchByName.jsp" class="p-2">FIND DETAILES BY NAME</a>	
+			<a href="update.jsp" class="p-2">UPDATE DETALES</a>	
+			
+			</div>						
 		</div>
 	</nav>
 	
 	
-	<marquee><h1 style="align-content: center;,color: blue;">WELCOME TO BANK OF INDIA.....</h1></marquee>
+	<marquee><h1 style="color: skyblue;">WELCOME TO BANK OF INDIA.....</h1></marquee>
 </body>
 </html>
