@@ -20,12 +20,11 @@ import com.xworkz.bankReg.service.BankService;
 @Controller
 @RequestMapping("/")
 public class BankController {
-
+    
 	@Autowired
 	private BankService bankService;
 
-	private List<String> palce = Arrays.asList("BANGLORE", "DAVANAGERE", "MYSORE", "HAVERI", "CHAMARAJANAGARA",
-			"GADGA");
+	private List<String> palce = Arrays.asList("BANGLORE", "DAVANAGERE", "MYSORE", "HAVERI", "CHAMARAJANAGARA","GADGA");
 	private List<String> gender = Arrays.asList("MALE", "FEMALE", "OTHERS");
 
 	public BankController() {
@@ -38,7 +37,6 @@ public class BankController {
 		System.out.println("Running on BankOn get method..");
 		model.addAttribute("palce", palce);
 		model.addAttribute("gender", gender);
-
 		return "BankRegistration";
 	}
 
@@ -129,6 +127,7 @@ public class BankController {
 	
 	@GetMapping("/delete")
 	public String delete(@RequestParam int id,Model model) {
+		
 		System.out.println("On Delete Running");
 		System.out.println("DELETED" +id);
 		boolean dto=bankService.onDelete(id);
@@ -136,11 +135,7 @@ public class BankController {
 		model.addAttribute("messages","Data Deleted Successfully");
 		 
 		return "findSerchByName";
-				
-		
-		
-		
-		
+						
 	}
 
 }

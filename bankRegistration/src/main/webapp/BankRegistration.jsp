@@ -49,7 +49,7 @@ m-5 pb-5 bg-info">
 	 <tr><td>CONTECT NO :</td><td><input type="number" name="contectNo"></td></tr>
 	
 	 <tr><td> 
-           PLACE :</td><td> <select name="palce">
+          PLACE :</td><td> <select name="palce">
           <option value="">---SELECT---</option>
           <c:forEach items="${palce}" var="p">
           <option value="${p}">${p}</option>
