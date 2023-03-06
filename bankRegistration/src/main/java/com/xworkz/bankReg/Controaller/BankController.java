@@ -130,11 +130,11 @@ public class BankController {
 		
 		System.out.println("On Delete Running");
 		System.out.println("DELETED" +id);
-		boolean dto=bankService.onDelete(id);
+		boolean dto=this.bankService.onDelete(id);
 		model.addAttribute("delete",dto);
 		model.addAttribute("messages","Data Deleted Successfully");
 		 
-		return "findSerchByName";
+		return "delete";
 						
 	}
 

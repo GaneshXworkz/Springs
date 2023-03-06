@@ -35,34 +35,7 @@
 m-5 pb-5 bg-info">
 
     
-      ID<input type="number" name="id" value="${delete.id}">
-      
-       NAME<input type="text" name="name" value="${delete.name}">
-    
-    CONTECT NO<input type="number" name="contectNo" value="${delete.contectNo}">
-    
-     SELECT PLACE<select  name="palce">
-        <option  value="${delete.palce}">${delete.palce}</option>
-        <c:forEach items="${palce}" var="p">
-        <option value="${p}">${p}</option>
-        </c:forEach>
-        </select>
-    
-     SELECT GENDER<select name="gender">
-        <option value="${delete.gender}">${delete.gender}</option>
-        <c:forEach items="${gender}" var="g">
-        <option value="${g}">${g}</option>
-        </c:forEach>
-        </select>
-    
-    ADDRESS<input type="text" name="address" value="${delete.address}">
-    
-    PAN NO<input type="text" name="panNo" value="${delete.panNo}">
-
-      <input type="submit" value="Delete" class="btn btn-primary"/>
-   
-
-
+<h1>Deleted Successfully..</h1>
 
 
 

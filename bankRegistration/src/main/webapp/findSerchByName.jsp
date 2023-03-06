@@ -38,7 +38,7 @@
 
 
 	<span style="color: red">${message}</span>
-	<span style="color: red">${messages}</span>
+	<span style="color: green">${messages}</span>
 
 	<form action="serchByName" method="get"
 		class="container col-12 col-sm-6 col-md-3 shadow-lg p-4 mb-4 bg-white mx-auto d-block border border-primary rounded-lg 

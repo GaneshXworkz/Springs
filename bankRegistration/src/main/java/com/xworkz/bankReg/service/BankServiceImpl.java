@@ -175,7 +175,7 @@ public class BankServiceImpl implements BankService{
 		 
 		boolean deleted=bankRepo.onDelete(id);
 		System.out.println("on delete is running...");
-		return deleted;
+		return true;
 		
 	}
 

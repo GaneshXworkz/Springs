@@ -27,7 +27,6 @@ implements WebMvcConfigurer{
 	@Override
 	protected String[] getServletMappings() {
 		System.out.println("Running getServletMappings....!");
-	
 		return new String[] {"/"};	
 		
 		}

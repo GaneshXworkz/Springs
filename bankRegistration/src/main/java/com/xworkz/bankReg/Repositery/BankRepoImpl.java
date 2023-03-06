@@ -111,13 +111,13 @@ public class BankRepoImpl implements BankRepo{
 	EntityManager manager= this.entityManagerFactory.createEntityManager();
 	
 	EntityTransaction entityTransaction=manager.getTransaction();
-	EntityDto entityDto=new EntityDto();
-	if(entityDto!=null) {
+	EntityDto entityDto=manager.find(EntityDto.class, id);
+	
 		entityTransaction.begin();
 		manager.remove(entityDto);
 		entityTransaction.commit();
 		manager.close();
-	}
+	
 	
 	
 	
