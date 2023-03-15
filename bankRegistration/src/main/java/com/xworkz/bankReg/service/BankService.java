@@ -6,6 +6,7 @@ import java.util.Set;
 
 import javax.validation.ConstraintViolation;
 
+import com.xworkz.bankReg.EntityDto.EntityDto;
 import com.xworkz.bankReg.dto.BankDto;
 
 public interface BankService {
@@ -32,5 +33,20 @@ public interface BankService {
 			return false;
 			
 		}
+
+
+	//public List<EntityDto> findtableAllDetailes();
+	
+	  
+		
+	
+	  default List<EntityDto> findtableAllDetailes(){
+	  
+	  return Collections.emptyList();
+	  
+	  }
+	 
+	  
+	    	 
 	
 }

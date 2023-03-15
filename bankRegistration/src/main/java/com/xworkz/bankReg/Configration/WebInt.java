@@ -1,5 +1,10 @@
 package com.xworkz.bankReg.Configration;
 
+import java.io.File;
+
+import javax.servlet.MultipartConfigElement;
+import javax.servlet.ServletRegistration.Dynamic;
+
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
@@ -38,4 +43,20 @@ implements WebMvcConfigurer{
 	
 	}	
 
+	
+	@Override
+	protected void customizeRegistration(Dynamic registration) {
+		
+		String tempDir="C:\\temp";
+		
+		int maxUplodeSizeInMb=3 * 1024 * 1024;
+		File uplodeDirectory=new File(tempDir);//path used by server
+		MultipartConfigElement multipartConfigElement=new MultipartConfigElement(uplodeDirectory.getAbsolutePath(),
+				maxUplodeSizeInMb,
+				maxUplodeSizeInMb *2,
+				maxUplodeSizeInMb/2);
+		registration.setMultipartConfig(multipartConfigElement);
+		
+		//super.customizeRegistration(registration);
+	}
 }

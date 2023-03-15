@@ -36,7 +36,8 @@
 			<a href="bankAction" class="p-2">BANK REGISTRATION</a>
 			<a href="findById.jsp" class="p-2">FIND BY ID</a>
 			<a href="findSerchByName.jsp" class="p-2">FIND DETAILES BY NAME</a>	
-			
+			<a href="getAll" class="p-2">FIND ALL LIST</a>	
+			<a href="uplode.jsp" class="p-2">IMAGE UPLOAD</a>	
 			
 			</div>						
 		</div>

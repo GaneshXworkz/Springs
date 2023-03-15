@@ -21,6 +21,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @Table(name="bank_table")
 @NamedQuery(name="findByName", query="select entity from EntityDto entity where entity.name=:nam")
+@NamedQuery(name="findall",query = "select ent from EntityDto ent")
 public class EntityDto {
 
 	

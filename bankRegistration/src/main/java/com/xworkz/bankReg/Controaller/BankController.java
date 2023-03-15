@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.xworkz.bankReg.EntityDto.EntityDto;
 import com.xworkz.bankReg.dto.BankDto;
 import com.xworkz.bankReg.service.BankService;
 
@@ -137,5 +138,49 @@ public class BankController {
 		return "delete";
 						
 	}
-
+	//*************************************************************************************
+	
+	  @GetMapping("/getAll")
+	  public String getAll(Model model) {
+	  System.out.println("list in controller");
+	  
+	  List<EntityDto> list =this.bankService.findtableAllDetailes();
+	  if(list!=null && !list.isEmpty())
+	  {
+		  model.addAttribute("list", list); 
+		  }
+	  else
+		  {
+	  model.addAttribute("message","no data found in bd...");
+	  
+	  }
+	  
+	  return "findAll";
+	  }
+	//*************************************************************************** 
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
 }

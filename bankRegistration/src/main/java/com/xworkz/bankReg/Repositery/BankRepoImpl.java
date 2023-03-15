@@ -2,9 +2,11 @@ package com.xworkz.bankReg.Repositery;
 
 import java.util.List;
 
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
+import javax.persistence.PersistenceException;
 import javax.persistence.Query;
 import javax.transaction.Transaction;
 
@@ -13,10 +15,11 @@ import org.springframework.stereotype.Repository;
 
 import com.xworkz.bankReg.EntityDto.EntityDto;
 @Repository
-public class BankRepoImpl implements BankRepo{
+public class BankRepoImpl implements BankRepo {
 
 	@Autowired
 	private EntityManagerFactory entityManagerFactory;
+	
 	
 	public BankRepoImpl() {
 		System.out.println("Created :"+this.getClass().getSimpleName());
@@ -103,27 +106,59 @@ public class BankRepoImpl implements BankRepo{
 	 	
 		
 	}
+	
+	
+	
+	
 
+	
+	
+	
 
-	@Override
-	public boolean onDelete(int id) {
-		 System.out.println("Delete method is running....");
-	EntityManager manager= this.entityManagerFactory.createEntityManager();
 	
-	EntityTransaction entityTransaction=manager.getTransaction();
-	EntityDto entityDto=manager.find(EntityDto.class, id);
-	
-		entityTransaction.begin();
-		manager.remove(entityDto);
-		entityTransaction.commit();
-		manager.close();
-	
-	
-	
-	
-	
-		return true;
-	}
+	  @Override public boolean onDelete(int id) {
+	  System.out.println("Delete method is running...."); EntityManager manager=
+	  this.entityManagerFactory.createEntityManager();
+	  
+	  EntityTransaction entityTransaction=manager.getTransaction(); EntityDto
+	  entityDto=manager.find(EntityDto.class, id);
+	  
+	  entityTransaction.begin(); manager.remove(entityDto);
+	  entityTransaction.commit(); manager.close();
+	  
+	  
+	  
+	  
+	  
+	  return true;
+	  }
+
+    
+	  
+		
+		  @Override
+	      public List<EntityDto> findtableAllDetailes() {
+		  System.out.println("list in repo");
+		  EntityManager manager=this.entityManagerFactory.createEntityManager();
+		  
+		  try {
+			  Query query=manager.createNamedQuery("findall");
+		  List list=query.getResultList();
+		  list.forEach(p->System.out.println(p));
+		  return list;
+		  }
+		  catch(PersistenceException e)
+		  { e.printStackTrace();
+		  
+		  }finally
+		  { manager.close();
+		  } 
+		  return BankRepo.super.findtableAllDetailes(); 
+		  }
+		 
+	  
+	  
+	 
 	
 	
 

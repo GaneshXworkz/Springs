@@ -40,17 +40,21 @@ m-5 pb-5 bg-info">
 	    <c:forEach items="${error}" var="a">
 		<span style="color:red">${a.message}</span><br>
 		</c:forEach>
+		
 
 
       <tr><h3> ACCOUNT SIGN IN</h3></tr>
 
-     <tr><td>NAME :</td><td><input type="text" name="name"></td></tr>
+     <tr><td>NAME :</td><td><input type="text" name="name" value="${BankDto.name}"></td></tr>
+     
+  <!--    <label for="name" class="error">Username is required</label>
+          <input type="text" id="name" name="name"> -->
 	
-	 <tr><td>CONTECT NO :</td><td><input type="number" name="contectNo"></td></tr>
+	 <tr><td>CONTECT NO :</td><td><input type="number" name="contectNo" value="${BankDto.contectNo}"></td></tr>
 	
 	 <tr><td> 
-          PLACE :</td><td> <select name="palce">
-          <option value="">---SELECT---</option>
+          PLACE :</td><td> <select name="palce" >
+          <option value="${BankDto.palce}">---SELECT---</option>
           <c:forEach items="${palce}" var="p">
           <option value="${p}">${p}</option>
           </c:forEach>
@@ -59,7 +63,7 @@ m-5 pb-5 bg-info">
 	
 	 <tr><td> 
            GENDER :</td><td> <select name="gender">
-          <option value="">---SELECT---</option>
+          <option value="${BankDto.gender}">---SELECT---</option>
           <c:forEach items="${gender}" var="a">
           <option value="${a}">${a}</option>
           </c:forEach>
@@ -67,9 +71,9 @@ m-5 pb-5 bg-info">
           </td></tr>
 	
 	
-	 <tr><td>ADDRESS</td><td><textarea rows="3" cols="22" name="address"></textarea></td></tr>	
+	 <tr><td>ADDRESS</td><td><textarea rows="3" cols="22" name="address" value="${BankDto.address}"></textarea></td></tr>	
 	
-	 <tr><td>PAN NO :</td><td><input type="text" name="panNo"></td></tr>
+	 <tr><td>PAN NO :</td><td><input type="text" name="panNo" value="${BankDto.panNo}"></td></tr>
 	 <br>
 	
 	  <tr><td><input type="submit" value="save" class="btn btn-primary"/></td></tr>

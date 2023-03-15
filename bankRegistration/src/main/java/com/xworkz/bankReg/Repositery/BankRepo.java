@@ -3,11 +3,12 @@ package com.xworkz.bankReg.Repositery;
 import java.util.Collections;
 import java.util.List;
 
+import com.mysql.cj.xdevapi.Collection;
 import com.xworkz.bankReg.EntityDto.EntityDto;
 
 public interface BankRepo {
 
-	public boolean save(EntityDto entity);
+	 boolean save(EntityDto entity);
 	
 	
 	default EntityDto findById(int id) { 
@@ -18,12 +19,28 @@ public interface BankRepo {
 		 return Collections.emptyList();
 	 }
 	  
-	public  boolean update(EntityDto entity);
+     boolean update(EntityDto entity);
 	
      default boolean onDelete(int id) {
 		
 		return false;
 		
 	}
+
+
+	default List<EntityDto> findtableAllDetailes() {
+		return Collections.emptyList();
+	}
+     
+   
+    	 
+	/*
+	 * default List<EntityDto> findtableAllDetailes(){
+	 * 
+	 * return Collections.emptyList();
+	 * 
+	 * }
+	 */
+     
 	
 }

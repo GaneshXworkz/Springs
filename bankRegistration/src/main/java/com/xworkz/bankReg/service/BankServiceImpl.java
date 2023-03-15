@@ -141,7 +141,7 @@ public class BankServiceImpl implements BankService{
 		
 	}
 
-
+//*******************************************************************
 	@Override
 	public Set<ConstraintViolation<BankDto>> validateAndUpdate(BankDto dto) {
 		ValidatorFactory factory=Validation.buildDefaultValidatorFactory();
@@ -169,7 +169,7 @@ public class BankServiceImpl implements BankService{
 		
 	}
 	
-	
+//*****************************************************************	
 	@Override
 	public boolean onDelete(int id) {
 		 
@@ -178,5 +178,32 @@ public class BankServiceImpl implements BankService{
 		return true;
 		
 	}
+   //****************************************************************
+
+	
+	  @Override public List<EntityDto> findtableAllDetailes() {
+	  System.out.println(" find all service ...running");
+	  List<EntityDto>list=this.bankRepo.findtableAllDetailes(); 
+	  List<BankDto> dtos= new ArrayList();
+	  
+	  if(list!=null && !list.isEmpty())
+	  { for(EntityDto entityDto : list) 
+	  {
+		  BankDto dto=new BankDto(); 
+		  BeanUtils.copyProperties(entityDto, dto); 
+		  dtos.add(dto);
+		  }
+	  System.out.println("size of dtos :"+dtos.size());
+	  System.out.println("size of entites"+list.size());
+	  return list; 
+	  }else {
+	  System.out.println("no data found...");
+	  return Collections.emptyList(); 
+	  }
+	  
+	  }
+	 
+	//****************************************************************************
+	
 
 }
