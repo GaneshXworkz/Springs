@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
+import javax.persistence.EntityManager;
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
@@ -181,13 +182,15 @@ public class BankServiceImpl implements BankService{
    //****************************************************************
 
 	
-	  @Override public List<EntityDto> findtableAllDetailes() {
+	  @Override 
+	  public List<EntityDto> findtableAllDetailes() {
 	  System.out.println(" find all service ...running");
 	  List<EntityDto>list=this.bankRepo.findtableAllDetailes(); 
 	  List<BankDto> dtos= new ArrayList();
 	  
 	  if(list!=null && !list.isEmpty())
-	  { for(EntityDto entityDto : list) 
+	  { 
+		  for(EntityDto entityDto : list) 
 	  {
 		  BankDto dto=new BankDto(); 
 		  BeanUtils.copyProperties(entityDto, dto); 
@@ -195,9 +198,13 @@ public class BankServiceImpl implements BankService{
 		  }
 	  System.out.println("size of dtos :"+dtos.size());
 	  System.out.println("size of entites"+list.size());
+	  
 	  return list; 
-	  }else {
+	  }
+	  else
+	  {
 	  System.out.println("no data found...");
+	  
 	  return Collections.emptyList(); 
 	  }
 	  
@@ -205,5 +212,37 @@ public class BankServiceImpl implements BankService{
 	 
 	//****************************************************************************
 	
+	  
+	  @Override
+	public List<BankDto> searchByNameAndPlaceValidate(String name, String palce) {
+		System.out.println("running searchByNameAndPlaceValidate");
+	   List<EntityDto> name1=this.bankRepo.searchByNameAndPlace(name, palce);
+	   List<BankDto> dtos=new ArrayList<>();
+	   if(name1!=null && !name1.isEmpty() || palce!=null && !palce.isEmpty()) {
+		   for (EntityDto entityDto : name1) {
+			   BankDto dto=new BankDto();
+			   BeanUtils.copyProperties(entityDto, dto);
+			   dtos.add(dto);
+			
+		}
+		 System.out.println("size od dtos :"+dtos.size());  
+		 System.out.println("size of entities :"+name1.size());
+		 return dtos;
+	   } else {
+			System.out.println("no data found in db...");
+			return Collections.emptyList();
+		 }   
+		   
+			
+	}
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
 
 }

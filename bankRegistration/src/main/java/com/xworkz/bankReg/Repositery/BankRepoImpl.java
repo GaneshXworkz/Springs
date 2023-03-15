@@ -72,12 +72,10 @@ public class BankRepoImpl implements BankRepo {
        System.out.println("Quary :"+name);
        List<EntityDto> list =query.getResultList();
        System.out.println("Total list Found in repo :"+list.size());
-		/* throw new IdNotFoundException; */
+	
 		return list;
        
-	} /*
-		 * catch (IdNotFoundException e) { System.out.println("ID NOT FOUND"); }
-		 */
+	} 
 	finally {
 		entityManager.close();
 		System.out.println("Release the connection....");
@@ -108,33 +106,24 @@ public class BankRepoImpl implements BankRepo {
 	}
 	
 	
-	
-	
-
-	
-	
-	
-
-	
-	  @Override public boolean onDelete(int id) {
-	  System.out.println("Delete method is running...."); EntityManager manager=
-	  this.entityManagerFactory.createEntityManager();
+	  @Override public boolean onDelete(int id)
+	  {
+	  System.out.println("Delete method is running....");
+	  EntityManager manager= this.entityManagerFactory.createEntityManager();
 	  
-	  EntityTransaction entityTransaction=manager.getTransaction(); EntityDto
-	  entityDto=manager.find(EntityDto.class, id);
+	  EntityTransaction entityTransaction=manager.getTransaction();
+	  EntityDto entityDto=manager.find(EntityDto.class, id);
 	  
-	  entityTransaction.begin(); manager.remove(entityDto);
-	  entityTransaction.commit(); manager.close();
-	  
-	  
-	  
-	  
-	  
+	  entityTransaction.begin();
+	  manager.remove(entityDto);
+	  entityTransaction.commit();
+	  manager.close();
+	    
 	  return true;
 	  }
 
     
-	  
+	//*************************************************************************************************************  
 		
 		  @Override
 	      public List<EntityDto> findtableAllDetailes() {
@@ -156,9 +145,29 @@ public class BankRepoImpl implements BankRepo {
 		  return BankRepo.super.findtableAllDetailes(); 
 		  }
 		 
+	//******************************************************************************************************************  
 	  
-	  
-	 
+	 @Override
+	public List<EntityDto> searchByNameAndPlace(String name, String palce) {
+		System.out.println("search by place in repo...");
+		EntityManager entityManager=this.entityManagerFactory.createEntityManager();
+		
+		try {
+			Query query=entityManager.createNamedQuery("searchByNameAndPlace");
+			query.setParameter("nam", name);
+			query.setParameter("plc",palce );
+			List list=query.getResultList();
+			list.forEach(p->System.out.println(p));
+			return list;
+		}catch (PersistenceException e) {
+			e.printStackTrace();
+		}finally {
+			entityManager.close();
+		}
+		 
+		 
+		return BankRepo.super.searchByNameAndPlace(name, palce);
+	}
 	
 	
 

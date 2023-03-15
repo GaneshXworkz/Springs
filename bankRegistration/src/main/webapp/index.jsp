@@ -38,6 +38,7 @@
 			<a href="findSerchByName.jsp" class="p-2">FIND DETAILES BY NAME</a>	
 			<a href="getAll" class="p-2">FIND ALL LIST</a>	
 			<a href="uplode.jsp" class="p-2">IMAGE UPLOAD</a>	
+			<a href="searchByNameAndplace.jsp" class="p-2">SEARCH BY NAME AND PLACE</a>	
 			
 			</div>						
 		</div>

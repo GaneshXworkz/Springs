@@ -47,6 +47,12 @@ public interface BankService {
 	  }
 	 
 	  
-	    	 
+	  default List<BankDto>	searchByNameAndPlaceValidate (String name,String palce) {
+	    	
+	    	return Collections.emptyList();
+	    	
+	    }
+			 
+	  
 	
 }

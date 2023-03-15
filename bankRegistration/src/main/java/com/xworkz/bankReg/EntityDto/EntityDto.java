@@ -22,6 +22,8 @@ import lombok.ToString;
 @Table(name="bank_table")
 @NamedQuery(name="findByName", query="select entity from EntityDto entity where entity.name=:nam")
 @NamedQuery(name="findall",query = "select ent from EntityDto ent")
+@NamedQuery(name="searchByNameAndPlace", 
+query = "select ent from EntityDto ent where ent.name=:nam or ent.palce=:plc")
 public class EntityDto {
 
 	

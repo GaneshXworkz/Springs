@@ -97,7 +97,7 @@ public class BankController {
 		return "findSerchByName";
 
 	}
-
+   //**********************************************************************************************************
 	@GetMapping("/updated")
 	public String onUpdate(@RequestParam int id, Model model) {
 		BankDto dto = this.bankService.findById(id);
@@ -108,7 +108,7 @@ public class BankController {
 
 		return "update";
 	}
-
+   //***********************************************************************************************************
 	@PostMapping("/updated")
 	public String onUpdate(BankDto dto, Model model) {
 		System.out.println("running on update" + dto);
@@ -124,7 +124,7 @@ public class BankController {
 		return "update";
 	}
 	
-	
+	//**********************************************************************************************************
 	
 	@GetMapping("/delete")
 	public String delete(@RequestParam int id,Model model) {
@@ -138,8 +138,8 @@ public class BankController {
 		return "delete";
 						
 	}
-	//*************************************************************************************
-	
+	//************************************************************************************************************
+	  
 	  @GetMapping("/getAll")
 	  public String getAll(Model model) {
 	  System.out.println("list in controller");
@@ -148,6 +148,7 @@ public class BankController {
 	  if(list!=null && !list.isEmpty())
 	  {
 		  model.addAttribute("list", list); 
+		  
 		  }
 	  else
 		  {
@@ -157,7 +158,21 @@ public class BankController {
 	  
 	  return "findAll";
 	  }
-	//*************************************************************************** 
+	  
+	//*************************************************************************************************************** 
+	  @GetMapping("/searchByNameAndplace")
+	  public String onSerachByNameAndPlace(@RequestParam String name,@RequestParam String palce,Model model) {
+		  System.out.println("Serach By name In Controller");
+		  List<BankDto> list=this.bankService.searchByNameAndPlaceValidate(name, palce);
+		  if(name!=null && !name.isEmpty()|| palce!=null && !palce.isEmpty()) {
+			  model.addAttribute("lists",list);
+		  }else {
+			  List<BankDto> findByname=this.bankService.searchByNameAndPlaceValidate(name, palce);
+			  
+		  }return "searchByNameAndplace";
+		  
+	  }
+	  
 	  
 	  
 	  

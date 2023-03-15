@@ -38,7 +38,7 @@
 m-5 pb-5 bg-info" enctype="multipart/form-data">
 
 		<h1 align="center">IMAGE UPLOAD</h1>
-		image upload <input type="file" name="ganesh"><br>
+		image upload <input type="file" name="ganesh"><br/>
 		<input type="submit" value=" upload" class="btn btn-primary">
 
 

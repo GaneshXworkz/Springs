@@ -33,14 +33,12 @@ public interface BankRepo {
 	}
      
    
-    	 
-	/*
-	 * default List<EntityDto> findtableAllDetailes(){
-	 * 
-	 * return Collections.emptyList();
-	 * 
-	 * }
-	 */
+    default List<EntityDto>	searchByNameAndPlace (String name,String palce) {
+    	
+    	return Collections.emptyList();
+    	
+    }
+	
      
 	
 }
